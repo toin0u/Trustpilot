@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-0.1.0 (xxxx-xx-xx)
+0.1.0 (2013-04-05)
 ------------------
 
-n/a
+* Initial import
