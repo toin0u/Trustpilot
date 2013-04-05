@@ -1,0 +1,33 @@
+{
+    "name": "toin0u/trustpilot",
+    "type": "library",
+    "description": "Trustpilot wrapper PHP 5.3+ library",
+    "keywords": ["Trustpilot", "api", "wrapper"],
+    "homepage": "https://github.com/toin0u/Trustpilot",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antoine Corcy",
+            "email": "contact@sbin.dk",
+            "homepage": "http://sbin.dk",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/toin0u/Trustpilot/issues",
+        "source": "https://github.com/toin0u/Trustpilot"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*",
+        "ext-zlib": "*"
+    },
+    "autoload": {
+        "psr-0": { "Trustpilot": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
