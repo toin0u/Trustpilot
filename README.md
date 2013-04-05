@@ -1,7 +1,7 @@
 Trustpilot
 ==========
 
-This PHP 5.3+ library helps you to interact with the [Trustpilot Developer Feed](http://trustpilot.github.com/).
+This PHP 5.3+ library helps you to interact with the [Trustpilot Developer Feed](http://trustpilot.github.com/developers/).
 
 
 Installation
