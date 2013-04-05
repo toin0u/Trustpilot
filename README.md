@@ -3,6 +3,8 @@ Trustpilot
 
 This PHP 5.3+ library helps you to interact with the [Trustpilot Developer Feed](http://trustpilot.github.com/developers/).
 
+[![Build Status](https://secure.travis-ci.org/toin0u/Trustpilot.png)](http://travis-ci.org/toin0u/Trustpilot)
+[![project status](http://stillmaintained.com/toin0u/Trustpilot.png)](http://stillmaintained.com/toin0u/Trustpilot)
 
 Installation
 ------------
@@ -73,7 +75,6 @@ try {
 } catch (Exception $e) {
     die($e->getMessage());
 }
-// ...
 ```
 
 You will get someting like:
@@ -160,5 +161,5 @@ Support
 License
 -------
 
-Geotools is released under the MIT License. See the bundled
+Trustpilot is released under the MIT License. See the bundled
 [LICENSE](https://github.com/toin0u/Trustpilot/blob/master/LICENSE) file for details.
