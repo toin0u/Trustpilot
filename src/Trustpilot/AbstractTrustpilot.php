@@ -47,7 +47,7 @@ abstract class AbstractTrustpilot
     {
         $adapter = $adapter ?: new CurlHttpAdapter();
 
-        $this->setData(json_decode(gzdecode($adapter->getContent(sprintf(self::FEED, $id)))));
+        $this->setData(json_decode($this->gzdecode($adapter->getContent(sprintf(self::FEED, $id)))));
     }
 
     /**
@@ -68,5 +68,17 @@ abstract class AbstractTrustpilot
     protected function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * Decode a gzip compressed string.
+     *
+     * @param string $data A gzip compressed string.
+     *
+     * @return string
+     */
+    protected function gzdecode($data)
+    {
+        return function_exists('gzdecode') ? gzdecode($data) : gzinflate(substr($data, 10, -8));
     }
 }
