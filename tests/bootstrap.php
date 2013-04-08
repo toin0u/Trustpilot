@@ -22,7 +22,7 @@ EOT
 
 if (!function_exists('gzdecode')) {
     function gzdecode($data) {
-       return gzinflate(substr($data,10,-8));
+       return gzinflate(substr($data, 10, -8));
     }
 }
 
