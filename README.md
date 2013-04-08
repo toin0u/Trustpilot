@@ -69,7 +69,7 @@ try {
     printf("Trust Score image url: %s\n", $trustpilot->getTrustScore()->getImageUrl('medium'));
 
     foreach ($trustpilot->getReviews() as $review) {
-        printf("Review date: %s\n", $review->getDateTime()->getDateTime()->format('Y-m-d H:i:s'));
+        printf("Review date: %s\n", $review->getTime()->getDateTime()->format('Y-m-d H:i:s'));
         printf("Review title: %s\n", $review->getTitle());
         printf("Review content: %s\n", $review->getContent());
         printf("Review company reply: %s\n", $review->getCompanyReply());
@@ -202,7 +202,7 @@ The sizes can be found on these arguments: `i24`, `i35`, `i64` and `i73`.
 
 ### Review ###
 
-* `getDateTime()`: The creation date of the review which is a `Trustpilot\Time\Time` object.
+* `getTime()`: The creation date of the review which is a `Trustpilot\Time\Time` object.
 * `getTitle()`: The title of the review.
 * `getContent()`: The main content of the review.
 * `getTrustScore()`: The `Trustpilot\TrustScore\TrustScore` object.

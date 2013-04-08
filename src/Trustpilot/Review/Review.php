@@ -45,7 +45,7 @@ class Review
      *
      * @return Time
      */
-    public function getDateTime()
+    public function getTime()
     {
         return new Time($this->review->Created);
     }

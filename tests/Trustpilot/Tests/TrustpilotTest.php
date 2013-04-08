@@ -46,10 +46,10 @@ class TrustpilotTest extends TestCase
         foreach ($trustpilot->getReviews() as $review) {
             $this->assertTrue(is_object($review));
             $this->assertInstanceOf('\Trustpilot\Review\Review', $review);
-            $this->assertTrue(is_object($review->getDateTime()));
-            $this->assertInstanceOf('\Trustpilot\Time\Time', $review->getDateTime());
-            $this->assertTrue(is_object($review->getDateTime()->getDateTime()));
-            $this->assertInstanceOf('\DateTime', $review->getDateTime()->getDateTime());
+            $this->assertTrue(is_object($review->getTime()));
+            $this->assertInstanceOf('\Trustpilot\Time\Time', $review->getTime());
+            $this->assertTrue(is_object($review->getTime()->getDateTime()));
+            $this->assertInstanceOf('\DateTime', $review->getTime()->getDateTime());
             $this->assertTrue(is_string($review->getTitle()));
             $this->assertTrue(is_string($review->getContent()));
             $this->assertTrue(is_object($review->getTrustScore()));
@@ -131,10 +131,10 @@ class TrustpilotTest extends TestCase
         foreach ($this->trustpilot->getReviews() as $review) {
             $this->assertTrue(is_object($review));
             $this->assertInstanceOf('\Trustpilot\Review\Review', $review);
-            $this->assertTrue(is_object($review->getDateTime()));
-            $this->assertInstanceOf('\Trustpilot\Time\Time', $review->getDateTime());
-            $this->assertTrue(is_object($review->getDateTime()->getDateTime()));
-            $this->assertInstanceOf('\DateTime', $review->getDateTime()->getDateTime());
+            $this->assertTrue(is_object($review->getTime()));
+            $this->assertInstanceOf('\Trustpilot\Time\Time', $review->getTime());
+            $this->assertTrue(is_object($review->getTime()->getDateTime()));
+            $this->assertInstanceOf('\DateTime', $review->getTime()->getDateTime());
             $this->assertTrue(is_string($review->getTitle()));
             $this->assertTrue(is_string($review->getContent()));
             $this->assertTrue(is_object($review->getTrustScore()));
