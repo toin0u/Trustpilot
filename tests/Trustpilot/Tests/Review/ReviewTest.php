@@ -37,7 +37,7 @@ class ReviewTest extends TestCase
         $this->assertTrue(is_object($this->review->getDateTime()->getDateTime()));
         $this->assertInstanceOf('\DateTime', $this->review->getDateTime()->getDateTime());
         $this->assertEquals('2013-03-07', $this->review->getDateTime()->getDateTime()->format('Y-m-d'));
-        $this->assertEquals('13:58:36+00:00', $this->review->getDateTime()->getDateTime()->format('H:i:sP'));
+        $this->assertEquals('14:58:36+00:00', $this->review->getDateTime()->getDateTime()->format('H:i:sP'));
     }
 
     public function testGetTitle()

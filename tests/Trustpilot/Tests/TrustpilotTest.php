@@ -94,7 +94,7 @@ class TrustpilotTest extends TestCase
         $this->assertTrue(is_object($this->trustpilot->getLastUpdate()->getDateTime()));
         $this->assertInstanceOf('\DateTime', $this->trustpilot->getLastUpdate()->getDateTime());
         $this->assertEquals('2013-04-04', $this->trustpilot->getLastUpdate()->getDateTime()->format('Y-m-d'));
-        $this->assertEquals('14:37:11+00:00', $this->trustpilot->getLastUpdate()->getDateTime()->format('H:i:sP'));
+        $this->assertEquals('15:37:11+00:00', $this->trustpilot->getLastUpdate()->getDateTime()->format('H:i:sP'));
     }
 
     public function testGetUrl()

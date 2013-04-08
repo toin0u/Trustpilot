@@ -57,6 +57,6 @@ class TimeTest extends TestCase
         $this->assertTrue(is_object($this->time->getDateTime()));
         $this->assertInstanceOf('\DateTime', $this->time->getDateTime());
         $this->assertEquals('2013-04-04', $this->time->getDateTime()->format('Y-m-d'));
-        $this->assertEquals('14:37:11+00:00', $this->time->getDateTime()->format('H:i:sP'));
+        $this->assertEquals('15:37:11+00:00', $this->time->getDateTime()->format('H:i:sP'));
     }
 }
