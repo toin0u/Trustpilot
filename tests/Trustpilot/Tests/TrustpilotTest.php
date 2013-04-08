@@ -117,11 +117,12 @@ class TrustpilotTest extends TestCase
         $this->assertArrayHasKey(3, $this->trustpilot->getDistributionOverStars());
         $this->assertArrayHasKey(4, $this->trustpilot->getDistributionOverStars());
         $this->assertCount(5, $this->trustpilot->getDistributionOverStars());
-        $this->assertEquals(3, $this->trustpilot->getDistributionOverStars()[0]);
-        $this->assertEquals(1, $this->trustpilot->getDistributionOverStars()[1]);
-        $this->assertEquals(11, $this->trustpilot->getDistributionOverStars()[2]);
-        $this->assertEquals(28, $this->trustpilot->getDistributionOverStars()[3]);
-        $this->assertEquals(62, $this->trustpilot->getDistributionOverStars()[4]);
+        $distributionOverStars = $this->trustpilot->getDistributionOverStars();
+        $this->assertEquals(3, $distributionOverStars[0]);
+        $this->assertEquals(1, $distributionOverStars[1]);
+        $this->assertEquals(11, $distributionOverStars[2]);
+        $this->assertEquals(28, $distributionOverStars[3]);
+        $this->assertEquals(62, $distributionOverStars[4]);
     }
 
     public function testGetReviews()

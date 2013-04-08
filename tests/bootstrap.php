@@ -13,11 +13,17 @@ EOT
     );
 }
 
-if (!extension_loaded('zlib') || !function_exists('gzdecode')) {
+if (!extension_loaded('zlib')) {
     die(<<<EOT
 zlib has to be enabled!
 EOT
     );
+}
+
+if (!function_exists('gzdecode')) {
+    function gzdecode($data) {
+       return gzinflate(substr($data,10,-8));
+    }
 }
 
 if ((!$loader = includeIfExists(__DIR__ . '/../vendor/autoload.php'))) {
