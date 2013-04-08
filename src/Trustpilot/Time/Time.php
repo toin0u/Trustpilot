@@ -37,15 +37,13 @@ class Time
     }
 
     /**
-     * Returns the DateTime object.
-     * We can't use HumanDate because it's too short ex: "4. apr".
-     * We should not use UnixTime because the TimeZone is ignored ie. UTC.
+     * Returns the DateTime object made from the UNIX timestamp.
      *
      * @return \DateTime
      */
     public function getDateTime()
     {
-        return new \DateTime($this->getHuman());
+        return new \DateTime('@' . $this->getUnixTime());
     }
 
     /**
