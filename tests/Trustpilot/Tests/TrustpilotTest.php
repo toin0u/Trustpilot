@@ -147,6 +147,20 @@ class TrustpilotTest extends TestCase
         }
     }
 
+    public function testGetReviewsReturnsEmptyArray()
+    {
+        $trustpilot = new TestableTrustpilot();
+
+        $method = new \ReflectionMethod(
+            $trustpilot, 'setData'
+        );
+        $method->setAccessible(true);
+        $method->invoke($trustpilot, json_decode(TestCase::FEED_WITHOUT_REVIEWS));
+
+        $this->assertTrue(is_array($trustpilot->getReviews()));
+        $this->assertCount(0, $trustpilot->getReviews());
+    }
+
     public function testGetCategories()
     {
         $this->assertTrue(is_array($this->trustpilot->getCategories()));
@@ -157,6 +171,20 @@ class TrustpilotTest extends TestCase
             $this->assertTrue(is_int($category->getTotalDomain()));
             $this->assertTrue(is_string($category->getImageUrl()));
         }
+    }
+
+    public function testGetCategoriesReturnsEmptyArray()
+    {
+        $trustpilot = new TestableTrustpilot();
+
+        $method = new \ReflectionMethod(
+            $trustpilot, 'setData'
+        );
+        $method->setAccessible(true);
+        $method->invoke($trustpilot, json_decode(TestCase::FEED_WITHOUT_CATEGORIES));
+
+        $this->assertTrue(is_array($trustpilot->getCategories()));
+        $this->assertCount(0, $trustpilot->getCategories());
     }
 
     public function testGetTrustScore()

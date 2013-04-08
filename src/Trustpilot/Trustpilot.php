@@ -83,13 +83,15 @@ class Trustpilot extends AbstractTrustpilot
     /**
      * Returns an array of Review object.
      *
-     * @return Review[]
+     * @return []|Review[]
      */
     public function getReviews()
     {
-        $allReviews = $this->getData()->Reviews;
+        if (0 === count($this->getData()->Reviews)) {
+            return array();
+        }
 
-        foreach ($allReviews as $review) {
+        foreach ($this->getData()->Reviews as $review) {
             $reviews[] = new Review($review);
         }
 
@@ -99,13 +101,15 @@ class Trustpilot extends AbstractTrustpilot
     /**
      * Returns an array of Category object.
      *
-     * @return Category[]
+     * @return []|Category[]
      */
     public function getCategories()
     {
-        $allCategories = $this->getData()->Categories;
+        if (0 === count($this->getData()->Categories)) {
+            return array();
+        }
 
-        foreach ($allCategories as $category) {
+        foreach ($this->getData()->Categories as $category) {
             $categories[] = new Category($category);
         }
 
