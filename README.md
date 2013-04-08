@@ -57,11 +57,13 @@ try {
     printf("Domain name: %s\n", $trustpilot->getDomainName());
     printf("Page url: %s\n", $trustpilot->getUrl());
     printf("Total reviews: %u\n", $trustpilot->getTotalReviews());
-    printf("- 1: %u\n", $trustpilot->getDistributionOverStars()[0]);
-    printf("- 2: %u\n", $trustpilot->getDistributionOverStars()[1]);
-    printf("- 3: %u\n", $trustpilot->getDistributionOverStars()[2]);
-    printf("- 4: %u\n", $trustpilot->getDistributionOverStars()[3]);
-    printf("- 5: %u\n", $trustpilot->getDistributionOverStars()[4]);
+
+    $distributionOverStars = $trustpilot->getDistributionOverStars();
+    printf("- 1: %u\n", $distributionOverStars[0]);
+    printf("- 2: %u\n", $distributionOverStars[1]);
+    printf("- 3: %u\n", $distributionOverStars[2]);
+    printf("- 4: %u\n", $distributionOverStars[3]);
+    printf("- 5: %u\n", $distributionOverStars[4]);
 
     printf("Trust Score (between 0 and 100): %u\n", $trustpilot->getTrustScore()->getScore());
     printf("Trust Score in stars (between 1 and 5): %u\n", $trustpilot->getTrustScore()->getStars());
