@@ -1,13 +1,13 @@
 CHANGELOG
 =========
 
-0.1.4 (xxxx-xx-xx)
+0.1.5 (2013-04-09)
 ------------------
 
-n/a
+* Fixed: gzdecode() method in Trustpilot
 
 
-0.1.3 (2013-04-x08)
+0.1.3 (2013-04-08)
 ------------------
 
 * Updated: Trustpilot getDateTime() to getTime() [BC break]
