@@ -22,6 +22,14 @@
         "ext-curl": "*",
         "ext-zlib": "*"
     },
+    "require-dev": {
+        "symfony/finder": "v2.2.1",
+        "symfony/filesystem": "v2.2.0"
+    },
+    "suggest": {
+        "symfony/finder": "Enabling Finder allows you to use the cache File",
+        "symfony/filesystem": "Enabling Finder allows you to use the cache File"
+    },
     "autoload": {
         "psr-0": { "Trustpilot": "src/" }
     },

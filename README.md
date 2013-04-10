@@ -38,6 +38,15 @@ require_once 'src/autoload.php';
 Usage
 -----
 
+First of all, you can set up a cache object which will cache your feed. There is no default cache and currently
+there is only `\Trustpilot\Cache\File`. You can provide your own cache by implementing
+`\Trustpilot\Cache\CacheInterface`.
+
+* **File cache** (you need to install Symfony Finder and Filesystem components)
+    * `File($cacheTimeLimit = self::CACHE_TIME_LIMIT, $temporaryFolderName = self::TEMPORARY_FOLDER_NAME)`
+    * `$cacheTimeLimit` must be something that strtotime() is able to parse, '> now - 3 hours' is set by default.
+    * `$temporaryFolderName` must be a string, 'trustpilot' is set by default.
+
 You need an `HttpAdapter` which is responsible to get data from Trustpilot Feed.
 You can provide your own adapter by implementing `\Trustpilot\HttpAdapter\HttpAdapterInterface`.
 
@@ -49,8 +58,12 @@ Currently, only `CurlHttpAdapter` is available - it's the default one.
 require 'vendor/autoload.php';
 
 use Trustpilot\Trustpilot;
+use Trustpilot\HttpAdapter\CurlHttpAdapter;
+use Trustpilot\Cache\File;
 
-$trustpilot = new Trustpilot(917278);
+$cache      = new File('> now - 1 hour', 'my_temporary_folder'); // optional
+$adapter    = new CurlHttpAdapter(); // the default one
+$trustpilot = new Trustpilot(917278, $cache, $adapter);
 
 try {
     printf("Last update: %s\n", $trustpilot->getLastUpdate()->getHuman());
@@ -242,6 +255,14 @@ Credits
 
 * [Antoine Corcy](https://twitter.com/toin0u) - Owner
 * [All contributors](https://github.com/toin0u/Trustpilot/contributors)
+
+
+Acknowledgments
+---------------
+* [Symfony Finder Component](https://github.com/symfony/Finder) -
+[MIT](https://raw.github.com/symfony/Finder/master/LICENSE)
+* [Symfony Filesystem Component](https://github.com/symfony/Filesystem) -
+[MIT](https://raw.github.com/symfony/Filesystem/master/LICENSE)
 
 
 Changelog

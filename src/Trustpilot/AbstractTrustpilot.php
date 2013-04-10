@@ -13,6 +13,7 @@ namespace Trustpilot;
 
 use Trustpilot\Httpadapter\HttpAdapterInterface;
 use Trustpilot\Httpadapter\CurlHttpAdapter;
+use Trustpilot\Cache\CacheInterface;
 
 /**
  * Trustpilot abstract class.
@@ -41,13 +42,24 @@ abstract class AbstractTrustpilot
      * Constructor.
      *
      * @param string|int           $id      The site id.
+     * @param CacheInterface       $cache   The CacheInterface to use (optional).
      * @param HttpAdapterInterface $adapter The HttpAdapter to use (optional).
      */
-    public function __construct($id, HttpAdapterInterface $adapter = null)
+    public function __construct($id, CacheInterface $cache = null, HttpAdapterInterface $adapter = null)
     {
         $adapter = $adapter ?: new CurlHttpAdapter();
 
-        $this->setData(json_decode($this->gzdecode($adapter->getContent(sprintf(self::FEED, $id)))));
+        if (null !== $cache) {
+            $data = $cache->get($id);
+            if (!$data) {
+                $data = $adapter->getContent(sprintf(self::FEED, $id));
+                $cache->set($id, $data);
+            }
+        } else {
+            $data = $adapter->getContent(sprintf(self::FEED, $id));
+        }
+
+        $this->setData(json_decode($this->gzdecode($data)));
     }
 
     /**

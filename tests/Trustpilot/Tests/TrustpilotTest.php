@@ -12,7 +12,6 @@
 namespace Trustpilot\Tests;
 
 use Trustpilot\Trustpilot;
-use Trustpilot\HttpAdapter\CurlHttpAdapter;
 
 /**
  * @author Antoine Corcy <contact@sbin.dk>
@@ -34,7 +33,7 @@ class TrustpilotTest extends TestCase
 
     public function testConstructor()
     {
-        $trustpilot = new Trustpilot(TestCase::FEED_ID, new CurlHttpAdapter());
+        $trustpilot = new Trustpilot(TestCase::FEED_ID);
 
         $this->assertTrue(is_object($trustpilot));
         $this->assertInstanceOf('\Trustpilot\Trustpilot', $trustpilot);
@@ -70,7 +69,40 @@ class TrustpilotTest extends TestCase
         }
         $this->assertTrue(is_object($trustpilot->getTrustScore()));
         $this->assertInstanceOf('\Trustpilot\TrustScore\TrustScore', $trustpilot->getTrustScore());
+    }
 
+    public function testConstructorWithCacheReturnsData()
+    {
+        $data   = 'foo';
+        $cached = gzencode($data);
+
+        $cache = $this->getMock('\Trustpilot\Cache\CacheInterface');
+        $cache
+            ->expects($this->once())
+            ->method('get')
+            ->will($this->returnValue($cached));
+
+        $trustpilot = new Trustpilot(TestCase::FEED_ID, $cache);
+
+        $method = new \ReflectionMethod(
+            $trustpilot, 'getData'
+        );
+        $method->setAccessible(true);
+        $this->assertEquals($method->invoke($trustpilot), json_decode($data));
+    }
+
+    public function testConstructorWithCacheReturnsFalse()
+    {
+        $cache = $this->getMock('\Trustpilot\Cache\CacheInterface');
+        $cache
+            ->expects($this->once())
+            ->method('get')
+            ->will($this->returnValue(false));
+
+        $trustpilot = new Trustpilot(TestCase::FEED_ID, $cache);
+
+        $this->assertTrue(is_array($trustpilot->getReviews()));
+        $this->assertCount(10, $trustpilot->getReviews());
     }
 
     public function testGetData()
