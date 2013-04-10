@@ -1,10 +1,10 @@
 CHANGELOG
 =========
 
-0.1.5 (xxxx-xx-xx)
+0.1.5 (2013-04-10)
 ------------------
 
-n/a
+* Added: Cache layer and File cache + tests - fix #1
 
 
 0.1.4 (2013-04-09)
