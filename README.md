@@ -283,3 +283,5 @@ License
 
 Trustpilot is released under the MIT License. See the bundled
 [LICENSE](https://github.com/toin0u/Trustpilot/blob/master/LICENSE) file for details.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/toin0u/Trustpilot/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
