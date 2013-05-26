@@ -11,8 +11,8 @@
 
 namespace Trustpilot;
 
-use Trustpilot\Httpadapter\HttpAdapterInterface;
-use Trustpilot\Httpadapter\CurlHttpAdapter;
+use HttpAdapter\HttpAdapterInterface;
+use HttpAdapter\CurlHttpAdapter;
 use Trustpilot\Cache\CacheInterface;
 
 /**

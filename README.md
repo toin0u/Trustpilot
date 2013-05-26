@@ -49,9 +49,9 @@ there is only `\Trustpilot\Cache\File`. You can provide your own cache by implem
     * `$temporaryFolderName` must be a string, 'trustpilot' is set by default.
 
 You need an `HttpAdapter` which is responsible to get data from Trustpilot Feed.
-You can provide your own adapter by implementing `\Trustpilot\HttpAdapter\HttpAdapterInterface`.
+You can provide your own adapter by implementing `HttpAdapter\HttpAdapterInterface`.
 
-Currently, only `CurlHttpAdapter` is available - it's the default one.
+[Read more about HttpAdapter](https://github.com/toin0u/HttpAdapter)
 
 ```php
 <?php
@@ -59,8 +59,8 @@ Currently, only `CurlHttpAdapter` is available - it's the default one.
 require 'vendor/autoload.php';
 
 use Trustpilot\Trustpilot;
-use Trustpilot\HttpAdapter\CurlHttpAdapter;
 use Trustpilot\Cache\File;
+use HttpAdapter\CurlHttpAdapter;
 
 $cache      = new File('> now - 1 hour', 'my_temporary_folder'); // optional
 $adapter    = new CurlHttpAdapter(); // the default one
