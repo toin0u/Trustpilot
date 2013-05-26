@@ -253,7 +253,7 @@ Please see [CONTRIBUTING](https://github.com/toin0u/Trustpilot/blob/master/CONTR
 Credits
 -------
 
-* [Antoine Corcy](https://twitter.com/toin0u) - Owner
+* [Antoine Corcy](https://twitter.com/toin0u)
 * [All contributors](https://github.com/toin0u/Trustpilot/contributors)
 
 
