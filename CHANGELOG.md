@@ -1,8 +1,14 @@
 CHANGELOG
 =========
 
+0.1.7 (xxxx-xx-xx)
+------------------
+
+n/a
+
+
 0.1.6 (2013-05-26)
------------------
+------------------
 
 * Removed: stillmaintained.com
 * Added: HttpAdapter library

@@ -27,7 +27,7 @@ class Trustpilot extends AbstractTrustpilot
      * Version.
      * @see http://semver.org/
      */
-    const VERSION = '0.1.6';
+    const VERSION = '0.1.7-dev';
 
 
     /**
