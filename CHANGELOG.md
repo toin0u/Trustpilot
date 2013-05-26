@@ -1,10 +1,14 @@
 CHANGELOG
 =========
 
-0.1.6 (xxxx-xx-xx)
+0.1.6 (2013-05-26)
 -----------------
 
-n/a
+* Removed: stillmaintained.com
+* Added: HttpAdapter library
+* Fixed: travis-ci
+* Added: bitdeli.com
+* Added: coveralls.io
 
 
 0.1.5 (2013-04-10)
