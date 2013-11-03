@@ -7,6 +7,7 @@ This PHP 5.3+ library helps you to interact with the [Trustpilot Developer Feed]
 [![Coverage Status](https://coveralls.io/repos/toin0u/Trustpilot/badge.png?branch=master)](https://coveralls.io/r/toin0u/Trustpilot)
 [![Latest Stable Version](https://poser.pugx.org/toin0u/trustpilot/v/stable.png)](https://packagist.org/packages/toin0u/trustpilot)
 [![Total Downloads](https://poser.pugx.org/toin0u/trustpilot/downloads.png)](https://packagist.org/packages/toin0u/trustpilot)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0474417b-27ab-4116-a911-442fbf5970ea/mini.png)](https://insight.sensiolabs.com/projects/0474417b-27ab-4116-a911-442fbf5970ea)
 
 
 Installation
