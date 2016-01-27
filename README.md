@@ -1,7 +1,7 @@
 Trustpilot
 ==========
 
-**Please note that the JSON feed will be [discontinued](https://github.com/trustpilot/developers/issues/27#issuecomment-75207809)**
+**Please note that the JSON feed has been [discontinued](https://github.com/trustpilot/developers/issues/27#issuecomment-75207809)**
 
 This PHP 5.3+ library helps you to interact with the [Trustpilot Developer Feed](http://trustpilot.github.com/developers/).
 
