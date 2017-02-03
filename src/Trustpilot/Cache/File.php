@@ -63,10 +63,14 @@ class File implements CacheInterface
     public function __construct($cacheTimeLimit = self::CACHE_TIME_LIMIT, $temporaryFolderName = self::TEMPORARY_FOLDER_NAME)
     {
         $this->cacheTimeLimit = $cacheTimeLimit;
-        $this->temporaryPath = sprintf(
-            '%s%s%s',
-            rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR), DIRECTORY_SEPARATOR, $temporaryFolderName
-        );
+        if (substr($temporaryFolderName, 0, 1) == '/') {
+            $this->temporaryPath = $temporaryFolderName;
+        } else {
+            $this->temporaryPath = sprintf(
+                '%s%s%s',
+                rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR), DIRECTORY_SEPARATOR, $temporaryFolderName
+            );
+        }
 
         $fs = new Filesystem();
         if (!$fs->exists($this->temporaryPath)) {
